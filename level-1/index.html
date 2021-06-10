@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVEL-1</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.7.1/aframe.min.js"></script> -->
+    <script src="https://codechangers.com/physics.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
+    <script
+        src="https://unpkg.com/aframe-fps-look-controls-component/dist/aframe-fps-look-controls-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@^4.1.2/dist/aframe-animation-component.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- MODAL -->
+    <div class="modal-intro bg-active">
+        <div class="modal">
+            <h1>OH NO</h1>
+            <p>Your flatmate has got the virus and now you're stuck here! Since you can't go anywhere you've ordered
+                some food that just got delivered. Go and pick it up before the neighbors dog eats it!</p>
+            <button class="close-btn">-></button>
+        </div>
+    </div>
+
+    <div class="modal-conversation">
+        <div class="modal">
+            <h1>HEY</h1>
+            <p>The door is that way!</p>
+            <button class="close-btn-two">OK</button>
+        </div>
+    </div>
+
+    <a-scene id="myScene" fog="type: linear; color: #000; far: 10; near: 7"
+        inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
+
+        <a-assets>
+            <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+            <img id="white-wall" src="assets/white-wall.jpg">
+            <a-asset-item id="virus" src="assets/virus.glb"></a-asset-item>
+            <a-asset-item id="coronaSound" src="assets/coronavirus.mp3" response-type="arraybuffer"></a-asset-item>
+            <a-asset-item id="door" src="assets/door.glb"></a-asset-item>
+            <a-asset-item id="navmesh" src="assets/navmesh2.gltf"></a-asset-item>
+            <a-asset-item id="table" src="assets/table.glb"></a-asset-item>
+            <a-asset-item id="boombox" src="assets/boombox.glb"></a-asset-item>
+            <a-asset-item id="food" src="assets/food.glb"></a-asset-item>
+            <a-asset-item id="guy" src="assets/guy.glb"></a-asset-item>
+            <audio id="bg-music" src="/assets/i-have-sinned-creepy-mysterious-free-music-2466.mp3"
+                preload="auto"></audio>
+        </a-assets>
+
+        <!-- CAMERA, CURSOR & MOVEMENT CONTROLS -->
+        <a-entity movement-controls="speed: 0.25; constrainToNavMesh: true">
+            <a-entity id="myCamera" camera position="0 1.6 0" fps-look-controls="userHeight: 0">
+                <a-cursor intersection-spawn="event: click; mixin: voxel"></a-cursor>
+            </a-entity>
+        </a-entity>
+
+        <!-- <a-entity movement-controls="speed: 0.15; constrainToNavMesh: true">
+            <a-entity camera position="0 1.6 0" look-controls="pointerLockEnabled: true">
+                <a-cursor></a-cursor>
+            </a-entity>
+        </a-entity> -->
+
+        <!-- GROUND -->
+        <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30" position="1.013 0 2.808"
+            scale="0.76 1.1400000000000001 1"></a-plane>
+
+
+        <!-- NAVIGATION MESH -->
+        <a-entity gltf-model="#navmesh" nav-mesh position="0 -0.1 0" visible="false"></a-entity>
+
+        <a-sky color="#222"></a-sky>
+
+        <!-- WALLS -->
+        <a-box class="wall" id="w0001" position="1 2 -10.5" rotation="" geometry="width: 6; height: 4; depth: 0.1"
+            material="src: #white-wall;" scale="3 1 1"></a-box>
+        <a-box class="wall" id="w0002" position="-8 2 1.7" rotation="0 -90 0" geometry="width: 7; height: 4; depth: 0.1"
+            material="src: #white-wall;" scale="3.5 1 1"></a-box>
+        <a-box class="wall" id="w0003" position="5.5 2 10.5" rotation="" geometry="width: 3; height: 4; depth: 0.1"
+            material="src: #white-wall;" scale="3 1 1"></a-box>
+        <a-box class="wall" id="w0004" position="10 2 0" rotation="0 -90 0" geometry="width: 6; height: 4; depth: 0.1"
+            material="src: #white-wall;" scale="3.5 1 1"></a-box>
+
+
+        <a-box class="wall" id="w0005" position="-3.5 2 14" geometry="depth: 0.1; height: 4; width: 3"
+            material="src: #white-wall;" scale="3 1 1"></a-box>
+        <a-box class="wall" id="w0006" position="0.96 2 15.7" rotation="0 -90 0" geometry="height:4;depth:0.1"
+            material="src: #white-wall;" scale="3.5 1 1"></a-box>
+        <a-box class="wall" id="w0007" position="5.556 2 14.003" rotation="0 -90 0"
+            geometry="width:2;height:4;depth:0.1" material="src: #white-wall;" scale="3.5 1 1"></a-box>
+
+        <a-box class="wall" id="w0008" position="1.723 2 17.4" geometry="width:0.5;height:4;depth:0.1"
+            material="src:#white-wall" scale="3 1 1">
+        </a-box>
+        <a-box class="wall" id="w0008-2" position="4.774 2 17.4" geometry="depth:0.1;height:4;width:0.5"
+            material="src:#white-wall" scale="3 1 1">
+        </a-box>
+        <a-box class="wall" id="w0008-3" position="3.245 3.679 17.4" geometry="height:0.64;width:0.55;depth:0.1"
+            material="src:#white-wall" scale="3 1 1">
+        </a-box>
+        <a-box class="wall" id="w0009" position="0.969 2 5.3" rotation="0 -90 0" geometry="width:3;height:4;depth:0.1"
+            material="src:#white-wall" scale="3.5 1 1"></a-box>
+        <a-box class="wall" id="w0010" position="7.805 2 0.1" geometry="width:1.45;depth:0.1;height:4"
+            material="src:#white-wall" scale="3 1 1"></a-box>
+        <a-box class="wall" id="w0011" position="2.514 2 0.1" geometry="depth:0.1;height:4" material="src:#white-wall"
+            scale="3 1 1"></a-box>
+        <a-box class="wall" id="w0012" position="4.83 3.679 0.1" geometry="height:0.64;width:0.55;depth:0.1"
+            material="src:#white-wall" scale="3 1 1"></a-box>
+
+        <!-- DOORS -->
+        <a-entity gltf-model="#door" position="3.83529 1.628 18.19796" scale="1 0.86 0.86" rotation="0 -10 0">
+        </a-entity>
+
+        <a-entity gltf-model="#door" position="5.82495 1.63591 0.88677" scale="1 0.86 0.86"
+            rotation="0 14.999999999999998 0">
+        </a-entity>
+
+        <!-- INTERIOR -->
+        <a-entity gltf-model="#table" position="-6 0 13" scale="0.008 0.008 0.008" rotation="-90 0 0"></a-entity>
+
+        <a-entity gltf-model="#boombox" position="-6.9064 1.7 13" scale="0.003 0.003 0.003" rotation="0 150 0"
+            sound="src: #bg-music; autoplay: true; volume: 2">
+        </a-entity>
+
+        <a-entity gltf-model="#guy" class="guy" position="6.94644 4.24 -7.58308" scale="1.5 1.5 1.5" rotation="0 -45 0">
+        </a-entity>
+
+        <a-entity gltf-model="#food" class="food" position="2.23086 -1.23444 18.79435" scale="0.7 0.7 0.7"
+            rotation="0 180 0" animation__scale="property: scale; to: 1 1 1;  easing: linear; startEvents: mouseenter;">
+        </a-entity>
+
+    </a-scene>
+
+</body>
+<script src="https://codechangers.com/camps2019/vr/shoot-partial.js"></script>
+<script src="scripts/level1.js"></script>
+<script>nextLevel = 'level2.html';</script>
+
+</html>

@@ -1,0 +1,30 @@
+body {
+  overflow: hidden;
+}
+
+.dates-facts {
+  list-style: none;
+  float: left;
+}
+
+.dates li {
+  border: solid 2px 2px #d0d0d0;
+  border-radius: 0.2em;
+  margin-bottom: 1em;
+  margin-left: 4em;
+}
+
+/* .data-images {
+  background-color: #e8e8e8;
+} */
+
+.data-images img {
+  display: inline-block;
+  max-width: 45%;
+  height: 250%;
+  width: 250%;
+}
+
+.message {
+  display: inline;
+}

@@ -1,0 +1,14 @@
+.App {
+  display: grid;
+  place-items: center;
+}
+
+body {
+  background-color: blanchedalmond;
+}
+
+.typewriter {
+  font-size: 60px;
+  padding: 2rem;
+  font-family: Helvetica, Arial, sans-serif;
+}

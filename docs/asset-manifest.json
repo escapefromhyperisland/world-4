@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0b1f4f58.chunk.css",
+    "main.js": "/static/js/main.f35f10c9.chunk.js",
+    "main.js.map": "/static/js/main.f35f10c9.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.eea9a297.js",
+    "runtime-main.js.map": "/static/js/runtime-main.eea9a297.js.map",
+    "static/js/2.ce4f6410.chunk.js": "/static/js/2.ce4f6410.chunk.js",
+    "static/js/2.ce4f6410.chunk.js.map": "/static/js/2.ce4f6410.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.0b1f4f58.chunk.css.map": "/static/css/main.0b1f4f58.chunk.css.map",
+    "static/js/2.ce4f6410.chunk.js.LICENSE.txt": "/static/js/2.ce4f6410.chunk.js.LICENSE.txt",
+    "static/media/Spagetti.134100a0.jpg": "/static/media/Spagetti.134100a0.jpg",
+    "static/media/angelo.c0509e31.png": "/static/media/angelo.c0509e31.png",
+    "static/media/cream.7e3e35b6.jpg": "/static/media/cream.7e3e35b6.jpg",
+    "static/media/eggs.8b210eeb.jpg": "/static/media/eggs.8b210eeb.jpg",
+    "static/media/guanciale.8ff0bb94.jpg": "/static/media/guanciale.8ff0bb94.jpg",
+    "static/media/onion.b4dd1054.jpeg": "/static/media/onion.b4dd1054.jpeg",
+    "static/media/parmigiano.9fa6ac88.jpg": "/static/media/parmigiano.9fa6ac88.jpg",
+    "static/media/pecorino-romano.ec2e222c.jpg": "/static/media/pecorino-romano.ec2e222c.jpg",
+    "static/media/salt&pepper.c3a53086.jpg": "/static/media/salt&pepper.c3a53086.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eea9a297.js",
+    "static/js/2.ce4f6410.chunk.js",
+    "static/css/main.0b1f4f58.chunk.css",
+    "static/js/main.f35f10c9.chunk.js"
+  ]
+}

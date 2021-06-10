@@ -7,6 +7,5 @@ closeBtn.addEventListener('click', function () {
 });
 
 exit.addEventListener('click', function () {
-  console.log('clicked!');
-  window.parent.postMessage('nextLevel');
+  location.href = 'https://emmy-codes.github.io/puzzle-game/';
 });

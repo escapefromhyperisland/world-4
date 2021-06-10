@@ -6,6 +6,9 @@ closeBtn.addEventListener('click', function () {
   introModalThree.classList.remove('bg-active');
 });
 
-exit.addEventListener('click', function () {
+exit.addEventListener('click', endGame);
+
+function endGame(e) {
+  console.log('hej');
   window.parent.postMessage('nextLevel');
-});
+}

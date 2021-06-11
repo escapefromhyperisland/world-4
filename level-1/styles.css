@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
 .modal-intro,
 .modal-conversation,
 .modal-intro-two,
@@ -22,15 +24,21 @@
 }
 
 .modal {
-  background-color: white;
-  width: 30%;
+  background-color: #000000;
+  color: #f0f8ff;
+  width: 40%;
   height: 30%;
   padding: 30px;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  border-radius: 10px;
+  border: 1px solid #f0f8ff;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .close-btn {
   width: 30%;
+  margin: 10px auto;
+  font-family: 'Quicksand', sans-serif;
 }

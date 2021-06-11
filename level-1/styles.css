@@ -37,7 +37,8 @@
   font-family: 'Quicksand', sans-serif;
 }
 
-.close-btn {
+.close-btn,
+.close-btn-two {
   width: 30%;
   margin: 10px auto;
   font-family: 'Quicksand', sans-serif;
